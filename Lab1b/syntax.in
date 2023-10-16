@@ -1,0 +1,38 @@
+<in>::= "in" "(" <identifier> ")"
+<out>::= "out" "(" <expressionstmt> ")"
+<iostmt>::= <in> | <out>
+
+<type>::= "list" | "int" | "string"
+<identifierlst> = <identifier> | <identifier> "," <identifierlst>
+<declarationstmt>::= <type> <identifierlst> | <declarationstmt> "=" <expressionstmt>
+
+<insert>::= "insert" "(" <identifier> "," <expressionstmt> "," <expressionstmt> ")"
+<delete>::= "delete" "(" <identifier> "," <expressionstmt> ")"
+<len>::= "len" "(" <identifier> ")"
+<access>::= <identifier> "[" <expressionstmt> "]"
+<liststmts>::= <insert> | <delete> | <len>
+
+<assignstmt>::= IDENTIFIER "=" expression
+
+<expressionop>::= "+" | "-" | "/" | "*" | "+=" | "-=" | "/=" | "*="
+<expressionstmt>::= <identifier> | 
+		    <number> |
+		    <string> |
+		    <expressionstmt> <expressionsign> <expressionstmt> |
+		    "(" <expressionstmt> ")"
+
+<conditionop>::= "==" | "!=" | "<" | ">" | "<=" | ">="
+<conditionstmt>::= <expressionstmt> | <conditionstmt> <conditionop> <conditionstmt>
+
+<ifstmt>::="if" <conditionstmt> "{" <stmtlist> "}"
+<elsestmt>::="else" "{" <stmtlist> "}"
+<ifelsestmt>::= <ifstmt> | <ifstmt> <elsestmt>
+
+<whilestmt>::="while" "(" <conditionstmt> ")" "{" <stmtlist> "}"
+
+<stmt>::=<iostmt> | <declarationstmt> | <liststmts> | <assignstmt> | <expressionstmt> |
+	 <conditionstmt> | <ifelsestmt> | <whilestmt>
+<stmtlist>::= <stmt> ";" | <stmt><stmtlist>
+
+<program>::= "prg" "{" <stmtlist> "}"
+

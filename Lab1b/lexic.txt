@@ -1,0 +1,28 @@
+Alphabet:
+	a) Letters - upper case (A-Z) and lower case (a-z) letters of English alphabet
+	b) Decimal digits (0-9)
+	c) Special chars:
+		1) Operators: + - * / < <= == = != => > [ ]
+		2) Separators ( ) { } : ; , space
+		3) @ # $ % ^ _	
+
+Lexic
+	a) Reserved words: list, int, string, const, if, else, for, insert, delete, in, out, len
+
+Identifiers - sequence of letters and digits -> first char must be letter
+	<digit> ::= "0" | "1" | ... | "9" 
+	<letter> ::= "A" | "B" | "C" | ... | "Z" | "a" | "b" | "c" | ... | "z" 
+	<alpha_seq> ::= <letter> | <letter><alpha_seq>
+	<alphanum_seq> ::= <alpha_seq> | <alpha_seq><digit> | <alpha_seq><alphanum_seq>
+	<identifier> ::= <alphanum_seq>
+	
+Constants
+	a) Integer - rule:
+		<non_zero_digit> ::= "1" | "2" | ... | "9"
+		<unsigned_int> ::= <non_zero_digit> | <non_zero_digit><digit>
+		<int> ::= "+"<unsigned_int> | "-"<unsigned_int> | "0"
+
+	b) String - rule:
+		<char> ::= <letter> | <digit>
+		<not_delim_string> ::= <char> | <char><string>
+		<string> ::= """ <not_delim_string> """

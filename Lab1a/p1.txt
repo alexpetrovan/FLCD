@@ -1,0 +1,10 @@
+Assignment 1: Compute max of 3 numbers
+prg {
+ int a, b, c;
+ in(a);
+ in(b);
+ in(c);
+ int max = a;
+ if (max < b){max = b;}
+ if (max < c){output(c); else{output(max);} 
+}

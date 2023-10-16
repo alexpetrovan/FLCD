@@ -1,0 +1,20 @@
+Assignment 3: Max of n numbers
+prg {
+ list lst;
+ int n, a, idx;
+ in(n);
+ while (n > 0)
+	{
+	 in(a);
+	 insert(lst, a, -1);
+	 n--;
+	}
+ int max = lst[0];
+ int idx = 0;
+ while (idx < len(lst))
+	{
+	 if (lst[idx] > max){max = lst[idx];}
+	 idx += 1;
+	}
+ out(max);
+}

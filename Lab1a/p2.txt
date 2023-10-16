@@ -1,0 +1,11 @@
+Assignment 2: GCD of 2 numbers
+prg {
+ int a, b;
+ in(a);
+ in(b);
+ while (a != b)
+	{
+	 if (a < b){a = a - b;} else {b = b - a};	
+	}
+ out(a);
+}
