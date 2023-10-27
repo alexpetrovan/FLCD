@@ -1,7 +1,7 @@
 Assignment 3: Max of n numbers
 prg {
  list lst;
- int n, a, idx;
+ int n, a, b;
  in(n);
  while (n > 0)
 	{
@@ -9,12 +9,12 @@ prg {
 	 insert(lst, a, -1);
 	 n--;
 	}
- int max = lst[0];
- int idx = 0;
- while (idx < len(lst))
+ int c = lst[0];
+ int b = 0;
+ while (b < len(lst))
 	{
-	 if (lst[idx] > max){max = lst[idx];}
-	 idx += 1;
+	 if (lst[b] > c){c = lst[b];}
+	 b += 1;
 	}
- out(max);
+ out(c);
 }
