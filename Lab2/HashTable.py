@@ -41,7 +41,7 @@ class HashTable():
         else:
             self._raise_key_error()
 
-    def get_pos(self, key):
+    def pos(self, key):
         """
         This returns
         :param key: key to search in the hashmap
