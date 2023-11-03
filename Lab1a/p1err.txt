@@ -1,8 +1,7 @@
 Assignment 1: Compute max of 3 numbers
 prg {
- int a, b, c;
- string str="alex"
- a=2;
+ int a&, b, c;
+ in(a);
  in(b);
  in(c);
  int max = a;

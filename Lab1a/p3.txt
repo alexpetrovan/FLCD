@@ -6,7 +6,7 @@ prg {
  while (n > 0)
 	{
 	 in(a);
-	 insert(lst, a, -1);
+	 insert(lst, a);
 	 n--;
 	}
  int c = lst[0];
@@ -14,7 +14,7 @@ prg {
  while (b < len(lst))
 	{
 	 if (lst[b] > c){c = lst[b];}
-	 b += 1;
+	 b = b + 1;
 	}
  out(c);
 }

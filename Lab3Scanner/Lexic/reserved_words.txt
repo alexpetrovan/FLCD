@@ -1,0 +1,16 @@
+prg
+int
+string
+list
+const
+in
+out
+while
+for
+insert
+delete
+len
+if
+else
+max
+min
