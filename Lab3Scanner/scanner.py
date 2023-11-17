@@ -173,5 +173,5 @@ class Scanner:
 if __name__ == "__main__":
     scanner = Scanner()
     curr_dir = os.path.dirname(os.path.realpath(__file__))
-    prg_1_path = os.path.join(curr_dir, "..", "Lab1a", "p1err.txt")
+    prg_1_path = os.path.join(curr_dir, "..", "Lab1a", "p2.txt")
     scanner.scan(prg_1_path)

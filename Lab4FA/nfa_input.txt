@@ -1,0 +1,8 @@
+s t u
+a b
+s
+u
+s ε t
+s ε u
+t a t
+t b u
