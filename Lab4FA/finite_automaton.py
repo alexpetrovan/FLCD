@@ -41,16 +41,39 @@ class FiniteAutomaton:
                         self.transitions[current_state] = {}
                     self.transitions[current_state][input_symbol] = next_state
 
+    def __print_menu(self):
+        print("What would you like to display?")
+        print("0. Cancel")
+        print("1. Set of States")
+        print("2. Alphabet")
+        print("3. Transitions")
+        print("4. Initial State")
+        print("5. Set of Final States")
+
     def display_elements(self):
-        # Basic output of FA's attributes
-        print("1. Set of States:", self.states)
-        print("2. Alphabet:", self.alphabet)
-        print("3. Transitions:")
-        for state, transitions in self.transitions.items():
-            for symbol, next_state in transitions.items():
-                print(f"   {state} -- {symbol} --> {next_state}")
-        print("4. Initial State:", self.initial_state)
-        print("5. Set of Final States:", self.final_states)
+        self.__print_menu()
+        while True:
+            try:
+                option = int(input("Select an option - "))
+                if option == 0:
+                    return
+                elif option == 1:
+                    print("Set of States:", self.states)
+                elif option == 2:
+                    print("Alphabet:", self.alphabet)
+                elif option == 3:
+                    print("Transitions:")
+                    for state, transitions in self.transitions.items():
+                        for symbol, next_state in transitions.items():
+                            print(f"   {state} -- {symbol} --> {next_state}")
+                elif option == 4:
+                    print("Initial State:", self.initial_state)
+                elif option == 5:
+                    print("Set of Final States:", self.final_states)
+                else:
+                    print("Not a valid option")
+            except Exception as e:
+                print(e)
 
     def verify_dfa_sequence(self, sequence):
         # Check if the input sequence is accepted by FA (only works for DFA)
