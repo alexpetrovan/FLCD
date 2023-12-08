@@ -1,0 +1,28 @@
+N = { program, stmtlist, stmt, instmt, outstmt, iostmt, type, identifierlst, declarationstmt, expressionstmt, insertstmt, deletestmt, lenstmt, accessstmt, liststmts, assignstmt, expressionop, expressionstmt, conditionop, conditionstmt, ifstmt, elsestmt, ifelsestmt, whilestmt}
+E = { prg, list, int, string, in, out, ;, (, ), {, }, [, ], +, -, /, *, identifier, insert, delete, len, number, if, else, while }
+S = program
+P = {
+	program -> prg { stmtlist },
+	stmtlist -> stmt ; | stmt stmtlist,
+	stmt -> iostmt | declarationstmt | liststmts | assignstmt | expressionstmt | conditionstmt | ifelsestmt | whilestmt,
+	instmt -> in ( identifier ),
+	outstmt -> out ( expressionstmt ),
+	iostmt -> instmt | outstmt,
+	type -> list | int | string,
+	identifierlst -> identifier | identifier identifierlst,
+    declarationstmt -> type identifierlst | declarationstmt expressionstmt,
+    insertstmt -> insert ( identifier expressionstmt expressionstmt ),
+    deletestmt -> delete ( identifier expressionstmt ),
+    lenstmt -> len ( identifier ),
+    accessstmt -> identifier [ expressionstmt ],
+    liststmts -> insertstmt | deletestmt | lenstmt | accessstmt,
+    assignstmt -> identifier expressionstmt,
+    expressionop -> + | - | / | *,
+    expressionstmt -> identifier | number | string | expressionstmt | expressionop | expressionstmt | ( expressionstmt ),
+    conditionop -> E,
+    conditionstmt -> expressionstmt | conditionstmt conditionop conditionstmt,
+    ifstmt -> if conditionstmt { stmtlist },
+    elsestmt -> else { stmtlist },
+    ifelsestmt -> ifstmt | ifstmt elsestmt,
+    whilestmt -> while ( conditionstmt ) { stmtlist }
+}
