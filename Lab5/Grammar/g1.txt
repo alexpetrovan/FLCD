@@ -1,9 +1,7 @@
-N = { S, A, B, C }
-E = { (, ), +, *, int }
+N = S
+E = a b c
 S = S
-P = {
-	S -> A B,
-	A -> ( S ) | int C,
-	B -> + S | E,
-	C -> * A | E
-}
+P =
+    S -> a S b S
+    S -> a S
+    S -> c

@@ -1,0 +1,11 @@
+prg
+{
+int
+identifier
+;
+in
+(
+identifier
+)
+;
+}

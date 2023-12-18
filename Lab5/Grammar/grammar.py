@@ -1,62 +1,87 @@
 class Grammar:
-    def __init__(self, N, E, P, S):
-        self._N = N
-        self._E = E
-        self._P = P
-        self._S = S
+    def __init__(self):
+        self.N = []
+        self.E = []
+        self.S = ""
+        self.P = {}
+
+    def rebuild(self):
+        self.N = []
+        self.E = []
+        self.S = ""
+        self.P = {}
 
     @staticmethod
-    def _validate(N, E, P, S):
-        if S not in N:
-            return False
-        for key in P.keys():
-            if key not in N:
+    def __process_line(line: str, delimiter=' '):
+        elements = line.strip().strip('{}').split(delimiter)
+        if len(elements) > 1:
+            elements[0] += delimiter
+            elements[0:2] = [''.join(elements[0:2])]
+
+        return [element.strip() for element in elements if element]
+
+    def read_from_file(self, file_name: str):
+        self.rebuild()
+        with open(file_name) as file:
+            line = next(file)
+            self.N = self.__process_line(line.split('=')[1], ', ')
+
+            line = next(file)
+            self.E = self.__process_line(line[line.find('=') + 1:-1].strip(), ', ')
+
+            line = next(file)
+            self.S = self.__process_line(line.split('=')[1], ', ')[0]
+
+            line = file.readline()
+            while line.strip() and ' -> ' not in line:
+                line = file.readline()
+
+            while line:
+                if ' -> ' in line:
+                    source, productions = line.split(" -> ")
+                    source = source.strip()
+                    for production in productions.split('|'):
+                        production = production.strip().split()
+                        if source in self.P:
+                            self.P[source].append(production)
+                        else:
+                            self.P[source] = [production]
+                line = file.readline()
+
+    def check_cfg(self):
+        has_tarting_symbol = False
+        for key in self.P.keys():
+            if key == self.S:
+                has_tarting_symbol = True
+            if key not in self.N[0].split():
                 return False
-            for move in P[key]:
-                for char in move.split(' '):
-                    if char not in N and char not in E and char != 'E':
-                        print(f"Problem in {key} and in {P[key]}. Char {char} not recognized !")
+        if not has_tarting_symbol:
+            return False
+        for production in self.P.values():
+            for rhs in production:
+                for value in rhs:
+                    if value not in self.N[0].split() and value not in self.E[0].split():
                         return False
         return True
 
-    @staticmethod
-    def parseLine(line):
-        return [value.strip() for value in line.strip().split('=')[1].strip()[1:-1].strip().split(',')]
+    def get_non_terminals(self):
+        return self.N
 
-    @staticmethod
-    def fromFile(fileName):
-        with open(fileName, 'r') as file:
-            N = Grammar.parseLine(file.readline())
-            E = Grammar.parseLine(file.readline())
-            S = file.readline().split('=')[1].strip()
-            P = Grammar.parseRules(Grammar.parseLine(''.join([line for line in file])))
+    def get_terminals(self):
+        return self.E
 
-            if not Grammar._validate(N, E, P, S):
-                raise Exception("Validation returned false.")
+    def get_start_symbol(self):
+        return self.S
 
-            return Grammar(N, E, P, S)
+    def get_productions(self):
+        return self.P
 
-    @staticmethod
-    def parseRules(rules):
-        result = {}
-
-        for rule in rules:
-            # print(rule)
-            lhs, rhs = rule.split('->')
-            lhs = lhs.strip()
-            rhs = [prod.strip() for prod in rhs.split("|")]
-            result[lhs] = rhs
-
-        return result
+    def get_productions_for_non_terminal(self, nt):
+        return self.P.get(nt, [])
 
     def __str__(self):
-        return 'Non-terminals = { ' + ', '.join(self._N) + ' }\n' \
-               + 'Terminals = { ' + ', '.join(self._E) + ' }\n' \
-               + 'Productions = {\n' + '\n '.join(f"{key} -> {value}" for key, value in self._P.items()) + '\n}\n' \
-               + 'Starting Word = ' + str(self._S) + '\n'
-
-grammar = Grammar.fromFile("g1.txt")
-print(grammar)
-
-grammar = Grammar.fromFile("g2.txt")
-print(grammar)
+        result = "N = " + str(self.N) + "\n"
+        result += "E = " + str(self.E) + "\n"
+        result += "S = " + str(self.S) + "\n"
+        result += "P = " + str(self.P) + "\n"
+        return result
