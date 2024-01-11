@@ -1,83 +1,83 @@
 (q, 0, [], ['S'])
-|--- expand
+Expand:
 (q, 0, [('S', 0)], ['a', 'S', 'b', 'S'])
-|--- advance
+Advance:
 (q, 1, [('S', 0), 'a'], ['S', 'b', 'S'])
-|--- expand
+Expand:
 (q, 1, [('S', 0), 'a', ('S', 0)], ['a', 'S', 'b', 'S', 'b', 'S'])
-|--- advance
+Advance:
 (q, 2, [('S', 0), 'a', ('S', 0), 'a'], ['S', 'b', 'S', 'b', 'S'])
-|--- expand
+Expand:
 (q, 2, [('S', 0), 'a', ('S', 0), 'a', ('S', 0)], ['a', 'S', 'b', 'S', 'b', 'S', 'b', 'S'])
-|--- momentary insuccess
+Momentary insuccess:
 (b, 2, [('S', 0), 'a', ('S', 0), 'a', ('S', 0)], ['a', 'S', 'b', 'S', 'b', 'S', 'b', 'S'])
-|--- another try
+Another try:
 (q, 2, [('S', 0), 'a', ('S', 0), 'a', ('S', 1)], ['a', 'S', 'b', 'S', 'b', 'S'])
-|--- momentary insuccess
+Momentary insuccess:
 (b, 2, [('S', 0), 'a', ('S', 0), 'a', ('S', 1)], ['a', 'S', 'b', 'S', 'b', 'S'])
-|--- another try
+Another try:
 (q, 2, [('S', 0), 'a', ('S', 0), 'a', ('S', 2)], ['c', 'b', 'S', 'b', 'S'])
-|--- advance
+Advance:
 (q, 3, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c'], ['b', 'S', 'b', 'S'])
-|--- advance
+Advance:
 (q, 4, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c', 'b'], ['S', 'b', 'S'])
-|--- expand
+Expand:
 (q, 4, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c', 'b', ('S', 0)], ['a', 'S', 'b', 'S', 'b', 'S'])
-|--- momentary insuccess
+Momentary insuccess:
 (b, 4, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c', 'b', ('S', 0)], ['a', 'S', 'b', 'S', 'b', 'S'])
-|--- another try
+Another try:
 (q, 4, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c', 'b', ('S', 1)], ['a', 'S', 'b', 'S'])
-|--- momentary insuccess
+Momentary insuccess:
 (b, 4, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c', 'b', ('S', 1)], ['a', 'S', 'b', 'S'])
-|--- another try
+Another try:
 (q, 4, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c', 'b', ('S', 2)], ['c', 'b', 'S'])
-|--- advance
+Advance:
 (q, 5, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c', 'b', ('S', 2), 'c'], ['b', 'S'])
-|--- momentary insuccess
+Momentary insuccess:
 (b, 5, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c', 'b', ('S', 2), 'c'], ['b', 'S'])
-|--- back
+Back
 (b, 4, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c', 'b', ('S', 2)], ['c', 'b', 'S'])
-|--- another try
+Another try:
 (b, 4, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c', 'b'], ['S', 'b', 'S'])
-|--- back
+Back
 (b, 3, [('S', 0), 'a', ('S', 0), 'a', ('S', 2), 'c'], ['b', 'S', 'b', 'S'])
-|--- back
+Back
 (b, 2, [('S', 0), 'a', ('S', 0), 'a', ('S', 2)], ['c', 'b', 'S', 'b', 'S'])
-|--- another try
+Another try:
 (b, 2, [('S', 0), 'a', ('S', 0), 'a'], ['S', 'b', 'S', 'b', 'S'])
-|--- back
+Back
 (b, 1, [('S', 0), 'a', ('S', 0)], ['a', 'S', 'b', 'S', 'b', 'S'])
-|--- another try
+Another try:
 (q, 1, [('S', 0), 'a', ('S', 1)], ['a', 'S', 'b', 'S'])
-|--- advance
+Advance:
 (q, 2, [('S', 0), 'a', ('S', 1), 'a'], ['S', 'b', 'S'])
-|--- expand
+Expand:
 (q, 2, [('S', 0), 'a', ('S', 1), 'a', ('S', 0)], ['a', 'S', 'b', 'S', 'b', 'S'])
-|--- momentary insuccess
+Momentary insuccess:
 (b, 2, [('S', 0), 'a', ('S', 1), 'a', ('S', 0)], ['a', 'S', 'b', 'S', 'b', 'S'])
-|--- another try
+Another try:
 (q, 2, [('S', 0), 'a', ('S', 1), 'a', ('S', 1)], ['a', 'S', 'b', 'S'])
-|--- momentary insuccess
+Momentary insuccess:
 (b, 2, [('S', 0), 'a', ('S', 1), 'a', ('S', 1)], ['a', 'S', 'b', 'S'])
-|--- another try
+Another try:
 (q, 2, [('S', 0), 'a', ('S', 1), 'a', ('S', 2)], ['c', 'b', 'S'])
-|--- advance
+Advance:
 (q, 3, [('S', 0), 'a', ('S', 1), 'a', ('S', 2), 'c'], ['b', 'S'])
-|--- advance
+Advance:
 (q, 4, [('S', 0), 'a', ('S', 1), 'a', ('S', 2), 'c', 'b'], ['S'])
-|--- expand
+Expand:
 (q, 4, [('S', 0), 'a', ('S', 1), 'a', ('S', 2), 'c', 'b', ('S', 0)], ['a', 'S', 'b', 'S'])
-|--- momentary insuccess
+Momentary insuccess:
 (b, 4, [('S', 0), 'a', ('S', 1), 'a', ('S', 2), 'c', 'b', ('S', 0)], ['a', 'S', 'b', 'S'])
-|--- another try
+Another try:
 (q, 4, [('S', 0), 'a', ('S', 1), 'a', ('S', 2), 'c', 'b', ('S', 1)], ['a', 'S'])
-|--- momentary insuccess
+Momentary insuccess:
 (b, 4, [('S', 0), 'a', ('S', 1), 'a', ('S', 2), 'c', 'b', ('S', 1)], ['a', 'S'])
-|--- another try
+Another try:
 (q, 4, [('S', 0), 'a', ('S', 1), 'a', ('S', 2), 'c', 'b', ('S', 2)], ['c'])
-|--- advance
+Advance:
 (q, 5, [('S', 0), 'a', ('S', 1), 'a', ('S', 2), 'c', 'b', ('S', 2), 'c'], [])
-|--- success
+Success:
 (f, 5, [('S', 0), 'a', ('S', 1), 'a', ('S', 2), 'c', 'b', ('S', 2), 'c'], [])
 => sequence is syntactically correct
 

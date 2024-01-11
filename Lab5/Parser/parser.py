@@ -46,7 +46,7 @@ class Parser:
         print(msg)
 
     def expand(self):
-        msg = "|--- expand\n"
+        msg = "Expand:\n"
         print(msg)
         with open(self.out_file, "a") as f:
             f.write(msg)
@@ -57,7 +57,7 @@ class Parser:
         self.input = new_production + self.input
 
     def advance(self):
-        msg = "|--- advance\n"
+        msg = "Advance:\n"
         print(msg)
         with open(self.out_file, "a") as f:
             f.write(msg)
@@ -66,7 +66,7 @@ class Parser:
         self.index += 1
 
     def momentary_insuccess(self):
-        msg = "|--- momentary insuccess\n"
+        msg = "Momentary insuccess:\n"
         print(msg)
         with open(self.out_file, "a") as f:
             f.write(msg)
@@ -74,7 +74,7 @@ class Parser:
         self.state = "b"
 
     def back(self):
-        msg = "|--- back\n"
+        msg = "Back\n"
         print(msg)
         with open(self.out_file, "a") as f:
             f.write(msg)
@@ -84,7 +84,7 @@ class Parser:
         self.index -= 1
 
     def success(self):
-        msg = "|--- success\n"
+        msg = "Success:\n"
         print(msg)
         with open(self.out_file, "a") as f:
             f.write(msg)
@@ -96,7 +96,7 @@ class Parser:
             f.write(msg)
 
     def another_try(self):
-        msg = "|--- another try\n"
+        msg = "Another try:\n"
         print(msg)
         with open(self.out_file, "a") as f:
             f.write(msg)
@@ -126,7 +126,7 @@ class Parser:
             self.state = "e"
 
     def error(self):
-        msg = "|--- error\n"
+        msg = "Error:\n"
         print(msg)
         with open(self.out_file, "a") as f:
             f.write(msg)

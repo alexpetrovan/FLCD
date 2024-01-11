@@ -1,0 +1,11 @@
+prg
+{
+ int a, b, c;
+ string str="alex"
+ a=2;
+ in(b);
+ in(c);
+ int max = a;
+ if (max < b){max = b;}
+ if (max < c){out(c); else{out(max);}
+}

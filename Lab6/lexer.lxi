@@ -1,0 +1,51 @@
+%{
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int lines = 1;
+%}
+
+%option noyywrap
+%option caseless
+
+/* Definitions for regular expressions */
+DIGIT   [0-9]
+LETTER  [A-Za-z]
+STRING (\"({LETTER}|{DIGIT}|_)*\")
+IDENTIFIER [A-Za-z][A-Za-z0-9]*
+
+NON_ZERO_DIGIT [1-9]
+UNSIGNED_INT ({NON_ZERO_DIGIT}|{NON_ZERO_DIGIT}{DIGIT})
+INT [+-]?{NON_ZERO_DIGIT}{DIGIT}*|0
+
+%%
+
+"prg"|"int"|"string"|"in"|"if"|"else"|"out"|"while"|"list"|"const"|"for"|"insert"|"delete"|"len" {printf("RESERVED WORD: %s\n", yytext);}
+
+"+"|"-"|"*"|"/"|">="|"<="|">"|"<"|"=="|"="|"!="|"["|"]" printf("OPERATOR: %s\n", yytext);
+
+"("|")"|"{"|"}"|","|":"|";"|space printf("SEPARATORS: %s\n", yytext);
+
+{IDENTIFIER} {printf("IDENTIFIER: %s\n", yytext);}
+
+{INT} {printf("INTEGER: %s\n", yytext);}
+
+{STRING} {printf("STRING: %s\n", yytext);}
+
+
+[ \t]+ {}
+
+"//"(.)*[\n]+ {++lines;}
+
+[\n]+ {++lines;}
+
+%%
+
+int main(int argc, char** argv) {
+    if (argc > 1)
+        yyin = fopen(argv[1], "r");
+    else
+        yyin = stdin;
+    yylex();
+}

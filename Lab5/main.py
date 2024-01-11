@@ -18,13 +18,15 @@ def main():
             output_file = "out/out1.txt"
             execute_parser(grammar_file, sequence_file, output_file)
         elif choice == '2':
-            print("Not implemented yet")
+            grammar_file = "Grammar/g2.txt"
+            sequence_file = "seq2.txt"
+            output_file = "out/out2.txt"
+            execute_parser(grammar_file, sequence_file, output_file)
         elif choice == '0':
             break
         else:
             print("Invalid choice. Please select a valid option.")
             continue
-
 
 def execute_parser(grammar_file, sequence_file, output_file):
     grammar = Grammar()

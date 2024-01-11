@@ -1,0 +1,297 @@
+(q, 0, [], ['program'])
+Expand:
+(q, 0, [('program', 0)], ['prg', '{', 'stmtlist', '}'])
+Advance:
+(q, 1, [('program', 0), 'prg'], ['{', 'stmtlist', '}'])
+Advance:
+(q, 2, [('program', 0), 'prg', '{'], ['stmtlist', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0)], ['stmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 0)], ['iostmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0)], ['instmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0), ('instmt', 0)], ['in', '(', 'identifier', ')', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0), ('instmt', 0)], ['in', '(', 'identifier', ')', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0)], ['instmt', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 0), ('iostmt', 1)], ['outstmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 0), ('iostmt', 1), ('outstmt', 0)], ['out', '(', 'expressionstmt', ')', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 0), ('iostmt', 1), ('outstmt', 0)], ['out', '(', 'expressionstmt', ')', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 0), ('iostmt', 1)], ['outstmt', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 0)], ['iostmt', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1)], ['declarationstmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0)], ['type', 'identifierlst', ';', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 0)], ['list', 'identifierlst', ';', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 0)], ['list', 'identifierlst', ';', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1)], ['int', 'identifierlst', ';', ';', '}'])
+Advance:
+(q, 3, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int'], ['identifierlst', ';', ';', '}'])
+Expand:
+(q, 3, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0)], ['identifier', ';', ';', '}'])
+Advance:
+(q, 4, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier'], [';', ';', '}'])
+Advance:
+(q, 5, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';'], [';', '}'])
+Momentary insuccess:
+(b, 5, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';'], [';', '}'])
+Back
+(b, 4, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier'], [';', ';', '}'])
+Back
+(b, 3, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0)], ['identifier', ';', ';', '}'])
+Another try:
+(q, 3, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 1)], ['identifier', 'identifierlst', ';', ';', '}'])
+Advance:
+(q, 4, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 1), 'identifier'], ['identifierlst', ';', ';', '}'])
+Expand:
+(q, 4, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 1), 'identifier', ('identifierlst', 0)], ['identifier', ';', ';', '}'])
+Momentary insuccess:
+(b, 4, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 1), 'identifier', ('identifierlst', 0)], ['identifier', ';', ';', '}'])
+Another try:
+(q, 4, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 1), 'identifier', ('identifierlst', 1)], ['identifier', 'identifierlst', ';', ';', '}'])
+Momentary insuccess:
+(b, 4, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 1), 'identifier', ('identifierlst', 1)], ['identifier', 'identifierlst', ';', ';', '}'])
+Another try:
+(b, 4, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 1), 'identifier'], ['identifierlst', ';', ';', '}'])
+Back
+(b, 3, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 1)], ['identifier', 'identifierlst', ';', ';', '}'])
+Another try:
+(b, 3, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int'], ['identifierlst', ';', ';', '}'])
+Back
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 1)], ['int', 'identifierlst', ';', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 2)], ['string', 'identifierlst', ';', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0), ('type', 2)], ['string', 'identifierlst', ';', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1), ('declarationstmt', 0)], ['type', 'identifierlst', ';', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 1)], ['declarationstmt', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2)], ['liststmts', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 0)], ['insertstmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 0), ('insertstmt', 0)], ['insert', '(', 'identifier', 'expressionstmt', 'expressionstmt', ')', ';', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 0), ('insertstmt', 0)], ['insert', '(', 'identifier', 'expressionstmt', 'expressionstmt', ')', ';', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 0)], ['insertstmt', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 1)], ['deletestmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 1), ('deletestmt', 0)], ['delete', '(', 'identifier', 'expressionstmt', ')', ';', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 1), ('deletestmt', 0)], ['delete', '(', 'identifier', 'expressionstmt', ')', ';', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 1)], ['deletestmt', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 2)], ['lenstmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 2), ('lenstmt', 0)], ['len', '(', 'identifier', ')', ';', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 2), ('lenstmt', 0)], ['len', '(', 'identifier', ')', ';', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 2)], ['lenstmt', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 3)], ['accessstmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 3), ('accessstmt', 0)], ['identifier', '[', 'expressionstmt', ']', ';', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 3), ('accessstmt', 0)], ['identifier', '[', 'expressionstmt', ']', ';', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2), ('liststmts', 3)], ['accessstmt', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 2)], ['liststmts', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 3)], ['assignstmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 3), ('assignstmt', 0)], ['identifier', 'expressionstmt', ';', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 3), ('assignstmt', 0)], ['identifier', 'expressionstmt', ';', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 3)], ['assignstmt', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4)], ['expressionstmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 0)], ['identifier', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 0)], ['identifier', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 1)], ['number', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 1)], ['number', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 2)], ['string', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 2)], ['string', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 3)], ['expressionop', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 3), ('expressionop', 0)], ['+', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 3), ('expressionop', 0)], ['+', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 3), ('expressionop', 1)], ['-', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 3), ('expressionop', 1)], ['-', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 3), ('expressionop', 2)], ['/', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 3), ('expressionop', 2)], ['/', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 3), ('expressionop', 3)], ['*', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 3), ('expressionop', 3)], ['*', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 3)], ['expressionop', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 4)], ['(', 'expressionstmt', ')', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4), ('expressionstmt', 4)], ['(', 'expressionstmt', ')', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 4)], ['expressionstmt', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 5)], ['ifelsestmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 5), ('ifelsestmt', 0)], ['ifstmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 5), ('ifelsestmt', 0), ('ifstmt', 0)], ['if', 'conditionstmt', '{', 'stmtlist', '}', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 5), ('ifelsestmt', 0), ('ifstmt', 0)], ['if', 'conditionstmt', '{', 'stmtlist', '}', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 5), ('ifelsestmt', 0)], ['ifstmt', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 5), ('ifelsestmt', 1)], ['ifstmt', 'elsestmt', ';', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 5), ('ifelsestmt', 1), ('ifstmt', 0)], ['if', 'conditionstmt', '{', 'stmtlist', '}', 'elsestmt', ';', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 5), ('ifelsestmt', 1), ('ifstmt', 0)], ['if', 'conditionstmt', '{', 'stmtlist', '}', 'elsestmt', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 5), ('ifelsestmt', 1)], ['ifstmt', 'elsestmt', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0), ('stmt', 5)], ['ifelsestmt', ';', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 0)], ['stmt', ';', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 1)], ['stmt', 'stmtlist', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 0)], ['iostmt', 'stmtlist', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 0), ('iostmt', 0)], ['instmt', 'stmtlist', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 0), ('iostmt', 0), ('instmt', 0)], ['in', '(', 'identifier', ')', 'stmtlist', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 0), ('iostmt', 0), ('instmt', 0)], ['in', '(', 'identifier', ')', 'stmtlist', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 0), ('iostmt', 0)], ['instmt', 'stmtlist', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 0), ('iostmt', 1)], ['outstmt', 'stmtlist', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 0), ('iostmt', 1), ('outstmt', 0)], ['out', '(', 'expressionstmt', ')', 'stmtlist', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 0), ('iostmt', 1), ('outstmt', 0)], ['out', '(', 'expressionstmt', ')', 'stmtlist', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 0), ('iostmt', 1)], ['outstmt', 'stmtlist', '}'])
+Another try:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 0)], ['iostmt', 'stmtlist', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1)], ['declarationstmt', 'stmtlist', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0)], ['type', 'identifierlst', ';', 'stmtlist', '}'])
+Expand:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 0)], ['list', 'identifierlst', ';', 'stmtlist', '}'])
+Momentary insuccess:
+(b, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 0)], ['list', 'identifierlst', ';', 'stmtlist', '}'])
+Another try:
+(q, 2, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1)], ['int', 'identifierlst', ';', 'stmtlist', '}'])
+Advance:
+(q, 3, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int'], ['identifierlst', ';', 'stmtlist', '}'])
+Expand:
+(q, 3, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0)], ['identifier', ';', 'stmtlist', '}'])
+Advance:
+(q, 4, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier'], [';', 'stmtlist', '}'])
+Advance:
+(q, 5, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';'], ['stmtlist', '}'])
+Expand:
+(q, 5, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0)], ['stmt', ';', '}'])
+Expand:
+(q, 5, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0), ('stmt', 0)], ['iostmt', ';', '}'])
+Expand:
+(q, 5, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0)], ['instmt', ';', '}'])
+Expand:
+(q, 5, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0), ('instmt', 0)], ['in', '(', 'identifier', ')', ';', '}'])
+Advance:
+(q, 6, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0), ('instmt', 0), 'in'], ['(', 'identifier', ')', ';', '}'])
+Advance:
+(q, 7, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0), ('instmt', 0), 'in', '('], ['identifier', ')', ';', '}'])
+Advance:
+(q, 8, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0), ('instmt', 0), 'in', '(', 'identifier'], [')', ';', '}'])
+Advance:
+(q, 9, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0), ('instmt', 0), 'in', '(', 'identifier', ')'], [';', '}'])
+Advance:
+(q, 10, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0), ('instmt', 0), 'in', '(', 'identifier', ')', ';'], ['}'])
+Advance:
+(q, 11, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0), ('instmt', 0), 'in', '(', 'identifier', ')', ';', '}'], [])
+Success:
+(f, 11, [('program', 0), 'prg', '{', ('stmtlist', 1), ('stmt', 1), ('declarationstmt', 0), ('type', 1), 'int', ('identifierlst', 0), 'identifier', ';', ('stmtlist', 0), ('stmt', 0), ('iostmt', 0), ('instmt', 0), 'in', '(', 'identifier', ')', ';', '}'], [])
+=> sequence is syntactically correct
+
+Parsing tree:
++---------+-----------------+----------+-----------+
+|   index | value           |   father |   sibling |
++=========+=================+==========+===========+
+|       0 | program         |       -1 |        -1 |
++---------+-----------------+----------+-----------+
+|       1 | prg             |        0 |         2 |
++---------+-----------------+----------+-----------+
+|       2 | {               |       -1 |         3 |
++---------+-----------------+----------+-----------+
+|       3 | stmtlist        |       -1 |        17 |
++---------+-----------------+----------+-----------+
+|       4 | stmt            |        3 |        11 |
++---------+-----------------+----------+-----------+
+|       5 | declarationstmt |        4 |        -1 |
++---------+-----------------+----------+-----------+
+|       6 | type            |        5 |         8 |
++---------+-----------------+----------+-----------+
+|       7 | int             |        6 |        -1 |
++---------+-----------------+----------+-----------+
+|       8 | identifierlst   |       -1 |        10 |
++---------+-----------------+----------+-----------+
+|       9 | identifier      |        8 |        -1 |
++---------+-----------------+----------+-----------+
+|      10 | ;               |       -1 |        -1 |
++---------+-----------------+----------+-----------+
+|      11 | stmtlist        |       -1 |        -1 |
++---------+-----------------+----------+-----------+
+|      12 | stmt            |       11 |        19 |
++---------+-----------------+----------+-----------+
+|      13 | iostmt          |       12 |        -1 |
++---------+-----------------+----------+-----------+
+|      14 | instmt          |       13 |        -1 |
++---------+-----------------+----------+-----------+
+|      15 | in              |       14 |        16 |
++---------+-----------------+----------+-----------+
+|      16 | (               |       -1 |        17 |
++---------+-----------------+----------+-----------+
+|      17 | identifier      |       -1 |        18 |
++---------+-----------------+----------+-----------+
+|      18 | )               |       -1 |        -1 |
++---------+-----------------+----------+-----------+
+|      19 | ;               |       -1 |        -1 |
++---------+-----------------+----------+-----------+
+|      20 | }               |       -1 |        -1 |
++---------+-----------------+----------+-----------+
